@@ -1,0 +1,263 @@
+# ========================================
+# ARCHIVOS CRÍTICOS QUE NO DEBES SUBIR
+# ========================================
+
+# Variables de entorno (CRÍTICO - contiene claves secretas)
+.env
+.env.local
+.env.production
+.env.development
+.env.backup
+
+# ========================================
+# PYTHON Y FLASK
+# ========================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# ========================================
+# ENTORNOS VIRTUALES
+# ========================================
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+Scripts/
+pyvenv.cfg
+entorno_backend/
+# ========================================
+# FLASK ESPECÍFICO
+# ========================================
+
+# Flask instance folder (ya la tienes en tu proyecto)
+instance/
+instance/*.db
+instance/*.sqlite
+instance/*.sqlite3
+
+# Flask session files
+flask_session/
+
+# ========================================
+# BASES DE DATOS
+# ========================================
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# PostgreSQL
+*.sql
+
+# MySQL
+*.mysql
+
+# ========================================
+# LOGS Y DEBUGGING
+# ========================================
+
+# Logs
+*.log
+logs/
+debug.log
+error.log
+app.log
+
+# Debug files
+*.debug
+
+# ========================================
+# TESTING
+# ========================================
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Unit test / coverage reports
+nosetests.xml
+coverage/
+
+# ========================================
+# IDEs Y EDITORES
+# ========================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========================================
+# SO Y SISTEMA
+# ========================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Windows
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# ========================================
+# ARCHIVOS TEMPORALES
+# ========================================
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# ========================================
+# ARCHIVOS DE CONFIGURACIÓN SENSIBLES
+# ========================================
+
+# Certificates
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Configuration files with sensitive data
+config_local.py
+local_settings.py
+secrets.py
+
+# ========================================
+# UPLOADS Y MEDIA (si los tienes)
+# ========================================
+
+# User uploads
+uploads/
+media/
+static/uploads/
+static/media/
+
+# ========================================
+# CACHE Y COMPILADOS
+# ========================================
+
+# Sass
+.sass-cache/
+
+# Node (si usas herramientas de frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# OTROS
+# ========================================
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
