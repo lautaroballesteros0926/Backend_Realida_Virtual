@@ -10,7 +10,6 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # IA API Configuration
-    AI_API_URL = os.environ.get('AI_API_URL') or 'https://api.openai.com/v1/chat/completions'
     AI_API_KEY = os.environ.get('AI_API_KEY') or 'your-api-key-here'
     
     # Response time limit (seconds)
