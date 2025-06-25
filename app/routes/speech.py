@@ -1,9 +1,7 @@
 # ===== app/routes/speech.py =====
 from flask import Blueprint, request, jsonify
 from google.generativeai import GenerativeModel, configure
-from google.genai import types
 from config import Config
-import base64
 
 speech_bp = Blueprint('speech', __name__)  # Corrige _name a _name_
 

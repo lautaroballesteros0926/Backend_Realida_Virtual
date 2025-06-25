@@ -13,11 +13,10 @@ def create_session():
     """Create new interview session (CU4: Participar en la entrevista simulada)"""
     try:
         data = request.get_json()
-        
         # Validate required fields
         required_fields = ['user_id', 'scenario_id', 'difficulty_level']
         for field in required_fields:
-            if not data.get(field):
+            if data.get(field) is None :
                 return jsonify({'error': f'Field {field} is required'}), 400
         
         # Validate user and scenario exist
@@ -59,7 +58,7 @@ def get_session(session_id):
         return jsonify({'error': str(e)}), 500
 
 @sessions_bp.route('/<int:session_id>/conversation', methods=['POST'])
-def add_conversation_turn():
+def add_conversation_turn(session_id):
     """Add a conversation turn to the session"""
     try:
         data = request.get_json()
