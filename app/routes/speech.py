@@ -1,6 +1,7 @@
 # ===== app/routes/speech.py =====
 from flask import Blueprint, request, jsonify
-from google.generativeai import GenerativeModel, configure, types
+from google.generativeai import GenerativeModel, configure
+from google.genai import types
 from config import Config
 import base64
 
@@ -14,7 +15,7 @@ model = GenerativeModel("gemini-1.5-flash")
 def transcribe():
     try:
         data = request.get_json()
-
+        print(data)
         if not data or 'base64_audio' not in data:
             return jsonify({'error': 'Missing "base64_audio" field in JSON'}), 400
 
@@ -23,8 +24,15 @@ def transcribe():
 
         # Envia el audio al modelo
         response = model.generate_content([
-            "Dime textualmente el contenido del audio, se encuentra en español.",
-            types.Part.from_bytes(data=audio_bytes, mime_type='audio/L16;rate=44100')  # Ajusta el rate si es necesario
+            {"role": "user", "parts":[
+                "Dime textualmente el contenido del audio, se encuentra en español.",
+                {
+                    "inline_data": {
+                        "mime_type": "audio/L16;rate=44100",
+                        "data": audio_bytes
+                }
+            }]
+}  # Ajusta el rate si es necesario
         ])
 
         return jsonify({"text": response.text}), 200
