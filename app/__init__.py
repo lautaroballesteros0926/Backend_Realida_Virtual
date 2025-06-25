@@ -22,6 +22,7 @@ def create_app():
     from app.routes.feedback import feedback_bp
     from app.routes.interviewer import interviewer_bp
     from app.routes.test import test_bp
+    from app.routes.speech import speech_bp
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(users_bp, url_prefix='/api/users')
     app.register_blueprint(scenarios_bp, url_prefix='/api/scenarios')
@@ -29,6 +30,7 @@ def create_app():
     app.register_blueprint(feedback_bp, url_prefix='/api/feedback')
     app.register_blueprint(interviewer_bp, url_prefix='/api/interviewer')
     app.register_blueprint(test_bp, url_prefix='/api')
+    app.register_blueprint(speech_bp, url_prefix='/api/speech')
     # Create tables
     with app.app_context():
         db.create_all()
