@@ -10,7 +10,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # IA API Configuration
-    AI_API_KEY = os.environ.get('AI_API_KEY') or 'your-api-key-here'
+    AI_API_KEY = os.environ.get('AI_API_KEY') or 'AIzaSyAUOl7tx3q4atsrHUuuVDusqxwDIE5KZpM'
     
     # Response time limit (seconds)
     MAX_RESPONSE_TIME = 3
